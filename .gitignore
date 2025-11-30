@@ -1,0 +1,15 @@
+# Data
+*.csv
+*.geojson
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store

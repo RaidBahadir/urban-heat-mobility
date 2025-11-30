@@ -63,3 +63,53 @@ I know this plan isn't perfect, and currently there are a few big challenges I'l
 * **Privacy:** The Citi Bike data is already pretty well anonymized; it doesn't contain personal rider information, just trip times and locations. I will not be doing any analysis that could try to de-anonymize or track individual users.
 * **Licensing:** All the data sources I plan to use are public. The Citi Bike data is provided under their own [data license agreement](httpss://ride.citibikenyc.com/data-sharing-policy), and the USGS Landsat data is in the public domain. I will make sure to properly cite all my data sources in my final report.
 * **Academic Integrity Note:** As per the course guidelines, I am documenting my use of AI. I used a large language model (LLM) to help me refine the structure and the grammar of this proposal document.
+
+---
+
+# Implementation Details
+
+## Project Overview
+This project investigates the relationship between **Urban Heat Islands (LST)** and **Citi Bike Trip** behavior in NYC. It uses a synthetic data pipeline to simulate the integration of geospatial satellite data with urban mobility data.
+
+## Motivation
+Understanding how temperature variations within a city affect bike-sharing usage can help in urban planning, station rebalancing during heatwaves, and understanding climate resilience.
+
+## Methodology
+1.  **Data Loading**: Real Citi Bike trip data (Aug 2024) is loaded and aggregated by station.
+2.  **Spatial Join**: Stations are mapped to NYC Zip Codes using a Point-in-Polygon spatial join with `nyc-zip-code-tabulation-areas-polygons.geojson`.
+3.  **Enrichment**: Station data is merged with Heat Vulnerability Index (HVI) data based on Zip Code.
+4.  **Analysis**:
+    - **Hypothesis Test**: Mann-Whitney U test to compare trip counts in High HVI (4-5) vs Low HVI (1-2) zones.
+    - **Regression**: Poisson Regression to model the effect of HVI Score on trip counts.
+
+## Project Structure
+- `data_loader.py`: Loads multiple Trip CSVs, performs spatial join with Zip Code GeoJSON, and merges with HVI data. Exports `final_station_data.csv`.
+- `eda.ipynb`: Jupyter notebook for visualizing the HVI map and station locations.
+- `analysis.py`: Script for statistical testing and regression modeling.
+- `requirements.txt`: List of Python dependencies.
+
+## Setup & Usage
+
+### 1. Data Requirements
+Ensure the following files are in the project root:
+- `202408-citibike-tripdata_*.csv` (Trip Data)
+- `nyc-zip-code-tabulation-areas-polygons.geojson` (Zip Boundaries)
+- `Heat_Vulnerability_Index_Rankings_20251130.csv` (HVI Data)
+
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run Data Loader (Optional verification)
+```bash
+python data_loader.py
+```
+
+### 4. Run Analysis
+```bash
+python analysis.py
+```
+
+### 5. View EDA
+Open `eda.ipynb` in Jupyter Notebook or VS Code to view visualizations.

@@ -1,0 +1,10 @@
+pandas
+geopandas
+rasterio
+shapely
+seaborn
+matplotlib
+scikit-learn
+statsmodels
+numpy
+jupyter
