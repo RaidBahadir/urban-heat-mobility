@@ -9,7 +9,7 @@
 ### 2. Statistical Analysis
 
 #### Hypothesis Test (Mann-Whitney U)
-We compared the mean daily trips of stations in **High Heat Vulnerability** zones (HVI 4-5) versus **Low Heat Vulnerability** zones (HVI 1-2).
+I compared the mean daily trips of stations in **High Heat Vulnerability** zones (HVI 4-5) versus **Low Heat Vulnerability** zones (HVI 1-2).
 
 - **High HVI (4-5) Mean Trips**: 929.78
 - **Low HVI (1-2) Mean Trips**: 3,959.31
@@ -17,7 +17,7 @@ We compared the mean daily trips of stations in **High Heat Vulnerability** zone
 - **Insight**: Stations in cooler (low risk) areas have **4x more trips** on average than those in high heat risk areas.
 
 #### Poisson Regression
-We modeled the relationship between HVI Score and Trip Counts: `trips ~ HVI_Score`.
+I modeled the relationship between HVI Score and Trip Counts: `trips ~ HVI_Score`.
 
 - **HVI Coefficient**: -0.4310
 - **Interpretation**: For every 1 unit increase in Heat Vulnerability Index, the expected trip count decreases by ~35% (Factor: 0.65).
