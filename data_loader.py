@@ -1,3 +1,14 @@
+"""
+DSA 210 Final Project - Data Loader & Pipeline
+Author: [Your Name]
+
+This script executes the data engineering pipeline:
+1. Loads raw Citi Bike trip CSVs (chunked/globbed).
+2. Aggregates trips by station.
+3. Performs a Spatial Join (Point-In-Polygon) to map Stations -> Zip Codes.
+4. Enriches station data with Heat Vulnerability Index (HVI) scores.
+5. Exports the final dataset for analysis.
+"""
 import pandas as pd
 import geopandas as gpd
 from shapely.geometry import Point

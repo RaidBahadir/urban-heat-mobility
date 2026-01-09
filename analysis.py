@@ -1,3 +1,12 @@
+"""
+DSA 210 Final Project - Analysis Script
+Author: [Your Name]
+
+This script performs the statistical analysis for the Urban Heat Island vs. Citi Bike project.
+It loads the processed station data and runs:
+1. Mann-Whitney U Test: To compare trip counts between High and Low HVI zones.
+2. Poisson Regression: To model the relationship between HVI Score and Trip Counts.
+"""
 import pandas as pd
 import numpy as np
 import statsmodels.api as sm

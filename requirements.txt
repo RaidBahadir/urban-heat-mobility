@@ -8,3 +8,4 @@ scikit-learn
 statsmodels
 numpy
 jupyter
+scipy
