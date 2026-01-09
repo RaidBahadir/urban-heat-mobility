@@ -1,15 +1,5 @@
-# Data
-*.csv
-*.geojson
-*.zip
-
-# Python
+# Ignore large data files
+202408-citibike-tripdata_*.csv
+JC-202508-citibike-tripdata.csv
+*.DS_Store
 __pycache__/
-*.py[cod]
-*$py.class
-
-# Jupyter
-.ipynb_checkpoints/
-
-# OS
-.DS_Store

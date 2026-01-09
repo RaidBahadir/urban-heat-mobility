@@ -46,7 +46,7 @@ def generate_plots():
     gdf_stations.plot(ax=ax, color='blue', markersize=2, alpha=0.3, label='Citi Bike Stations')
     plt.title('NYC Heat Vulnerability Index (HVI) & Citi Bike Stations')
     plt.axis('off')
-    plt.savefig('hvi_map.png', dpi=100, bbox_inches='tight')
+    plt.savefig('hvi_map.png', dpi=300, bbox_inches='tight')
     plt.close()
     
     # Plot 2: Boxplot
@@ -57,7 +57,7 @@ def generate_plots():
     plt.title('Distribution of Trip Counts by HVI Score')
     plt.ylabel('Total Trips (Log Scale)')
     plt.xlabel('HVI Score (1=Low Risk, 5=High Risk)')
-    plt.savefig('hvi_boxplot.png', dpi=100, bbox_inches='tight')
+    plt.savefig('hvi_boxplot.png', dpi=300, bbox_inches='tight')
     plt.close()
     
     print("Done. Images saved.")
