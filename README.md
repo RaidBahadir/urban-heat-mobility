@@ -63,3 +63,41 @@ I know this plan isn't perfect, and currently there are a few big challenges I'l
 * **Privacy:** The Citi Bike data is already pretty well anonymized; it doesn't contain personal rider information, just trip times and locations. I will not be doing any analysis that could try to de-anonymize or track individual users.
 * **Licensing:** All the data sources I plan to use are public. The Citi Bike data is provided under their own [data license agreement](httpss://ride.citibikenyc.com/data-sharing-policy), and the USGS Landsat data is in the public domain. I will make sure to properly cite all my data sources in my final report.
 * **Academic Integrity Note:** As per the course guidelines, I am documenting my use of AI. I used a large language model (LLM) to help me refine the structure and the grammar of this proposal document.
+
+## Reproduction Instructions
+To reproduce this analysis on your local machine:
+
+1.  **Clone the Repository**:
+    ```bash
+    git clone https://github.com/RaidBahadir/urban-heat-mobility.git
+    cd urban-heat-mobility
+    ```
+
+2.  **Download Data**:
+    -   **Citi Bike**: Download the August 2024 zip files from [Citi Bike Data](https://s3.amazonaws.com/tripdata/index.html).
+    -   **Unzip**: Extract the CSV files directly into the **root directory** of this project.
+    -   **Naming**: Ensure files match the pattern `202408-citibike-tripdata_*.csv`. (e.g., `202408-citibike-tripdata_1.csv`, etc.).
+
+3.  **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Run the Pipeline**:
+    -   **Step 1: Process Data**:
+        ```bash
+        python data_loader.py
+        ```
+        *This will generate `final_station_data.csv`.*
+
+    -   **Step 2: Generate Visuals**:
+        ```bash
+        python generate_plots.py
+        ```
+        *This will save `hvi_map.png` and `hvi_boxplot.png`.*
+
+    -   **Step 3: Run Analysis**:
+        ```bash
+        python analysis.py
+        ```
+        *This will print the statistical results to the console.*
