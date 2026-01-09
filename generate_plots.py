@@ -1,4 +1,7 @@
-
+"""
+DSA 210 Final Project - Visualization
+This script generates the maps and plots for my report.
+"""
 import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt

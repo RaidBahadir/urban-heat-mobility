@@ -29,3 +29,7 @@ The analysis includes:
 - A boxplot showing the distribution of trips across HVI scores.
 
 *(See `eda.ipynb` for charts)*
+ 
+ ## Limitations
+ - **Network Effects**: Citi Bike is a network; riders travel *to* destinations. A trip might originate in a hot zone solely to escape to a cooler area (e.g., a park). Our current model only accounts for the start station's HVI, ignoring the destination's influence.
+ - **Confounding Variables**: We did not control for population density or commuter patterns (business vs. residential).
