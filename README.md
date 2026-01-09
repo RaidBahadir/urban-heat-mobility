@@ -23,19 +23,19 @@ As required, I will use a publicly available dataset and enrich it with a second
 ### 1. Primary Dataset: Bike-Share Trip Data
 
 * **Data:** NYC Citi Bike Trip Histories
-* **Source:** This data is publicly available and hosted by [Citi Bike on an S3 bucket](httpss://s3.amazonaws.com/tripdata/index.html).
+* **Source:** This data is publicly available and hosted by [Citi Bike on an S3 bucket](https://s3.amazonaws.com/tripdata/index.html).
 * **Collection Plan:** I will download the monthly CSV files for the summer months (e.g., June-August 2025). These files contain detailed trip data, including trip duration and, most importantly, the latitude and longitude for the start and end stations.
 
 ### 2. Enrichment Dataset: Land Surface Temperature (LST)
 
 * **Data:** Land Surface Temperature (LST) satellite data. This is different from air temperature and shows the actual radiated heat from surfaces (like asphalt and rooftops), which is the core of the UHI effect.
-* **Source:** This data is publicly available from the [USGS EarthExplorer](httpss://earthexplorer.usgs.gov/). I will use data from the Landsat 8 or 2 satellite.
+* **Source:** This data is publicly available from the [USGS EarthExplorer](https://earthexplorer.usgs.gov/). I will use data from the Landsat 8 or 2 satellite.
 * **Collection Plan:** I will download Landsat 8 or 2 satellite images for the NYC area from the same summer period. Using Python, I will process these images (which come in GeoTIFF format) to create a high-resolution map of the hottest and coolest areas of the city. I will then be able to link the Citi Bike station locations to this UHI map to see which stations are in "hotspots."
 
 ### 3. (If Needed) Enrichment Dataset #2: Hourly Air Temperature
 
 * **Data:** Hourly weather data (air temperature, humidity, precipitation).
-* **Source:** A public weather API, such as [Visual Crossing](httpss://www.visualcrossing.com/) or OpenWeatherMap.
+* **Source:** A public weather API, such as [Visual Crossing](https://www.visualcrossing.com/) or OpenWeatherMap.
 * **Collection Plan:** While LST is my main focus, I will also pull hourly weather data. This will allow me to control for general weather conditions (e.g., "was it just a hot day everywhere?" or "was it raining?") and see how the specific UHI hotspots compare.
 
 ## Analysis Plan & Methodology
@@ -61,7 +61,7 @@ I know this plan isn't perfect, and currently there are a few big challenges I'l
 ## Ethics and Licensing
 
 * **Privacy:** The Citi Bike data is already pretty well anonymized; it doesn't contain personal rider information, just trip times and locations. I will not be doing any analysis that could try to de-anonymize or track individual users.
-* **Licensing:** All the data sources I plan to use are public. The Citi Bike data is provided under their own [data license agreement](httpss://ride.citibikenyc.com/data-sharing-policy), and the USGS Landsat data is in the public domain. I will make sure to properly cite all my data sources in my final report.
+* **Licensing:** All the data sources I plan to use are public. The Citi Bike data is provided under their own [data license agreement](https://ride.citibikenyc.com/data-sharing-policy), and the USGS Landsat data is in the public domain. I will make sure to properly cite all my data sources in my final report.
 * **Academic Integrity Note:** As per the course guidelines, I am documenting my use of AI. I used a large language model (LLM) to help me refine the structure and the grammar of this proposal document.
 
 ## Reproduction Instructions
